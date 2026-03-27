@@ -3,8 +3,14 @@ package electronique;
 import java.util.List;
 
 public abstract class Circuit extends Composant {
-    public Circuit(List<Composant> listComposant){
+    protected List<Composant> composants;
 
+    public Circuit(List<Composant> listComposant){
+        this.composants = listComposant;
+    }
+
+    public List<Composant> getComposants(){
+        return this.composants;
     }
 
 
