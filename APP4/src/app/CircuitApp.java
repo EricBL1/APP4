@@ -59,7 +59,7 @@ public class CircuitApp {
 
     private static boolean demanderSiContinuer(){
         while(true){
-            System.out.print("\n[R] Tester un autre fichier | [Q] Quitter : ");
+            System.out.println("\n[R] Tester un autre fichier | [Q] Quitter : ");
             String continuer = scanner.nextLine().toUpperCase();
 
             if(continuer.equals("R")){
