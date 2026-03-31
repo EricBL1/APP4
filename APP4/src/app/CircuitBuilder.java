@@ -12,7 +12,7 @@ public class CircuitBuilder {
 
     private static final char fSep = File.separatorChar;
 
-    private static final String pathIn = System.getProperty("user.dir") + fSep + "APP4" + fSep +"src" + "donnees" + fSep + "fichiers_json" + fSep;
+    private static final String pathIn = System.getProperty("user.dir") + fSep + "APP4" + fSep +"src" + fSep + "donnees" + fSep + "fichiers_json" + fSep;
 
     public CircuitBuilder(){
 
@@ -20,11 +20,11 @@ public class CircuitBuilder {
 
     public Composant construireCircuit(String fichierALire){
         ObjectMapper mapper = new ObjectMapper();
-        String fichier = (pathIn + fichierALire);
+        String cheminComplet = (pathIn + fichierALire);
         try{
-            JsonNode donneesCircuit = mapper.readTree(new File(fichier));
+            JsonNode donneesCircuit = mapper.readTree(new File(cheminComplet));
 
-            lireComposant(donneesCircuit);
+            return lireComposant(donneesCircuit.get("circuit"));
 
         } catch (IOException e) {
             System.err.println("Erreur de lecture : " + e.getMessage());
