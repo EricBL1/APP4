@@ -12,7 +12,7 @@ public class CircuitBuilder {
 
     private static final char fSep = File.separatorChar;
 
-    private static final String pathIn = System.getProperty("user.dir") + fSep + "APP4" + fSep +"src" + fSep + "donnees" + fSep + "fichiers_json" + fSep;
+    private static final String pathIn = System.getProperty("user.dir") + fSep + "donnees" + fSep + "fichiers_json" + fSep;
 
     public CircuitBuilder(){
 

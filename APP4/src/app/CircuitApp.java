@@ -1,21 +1,13 @@
 package app;
 
-import electronique.CircuitParallele;
-import electronique.CircuitSerie;
-import electronique.Composant;
-import electronique.Resistance;
-
-import java.util.ArrayList;
-import java.util.List;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import electronique.*;
 import java.io.File;
-import java.io.IOException;
 import java.util.Scanner;
+
 public class CircuitApp {
     private static final Scanner scanner = new Scanner(System.in);
     private static final char fSep = File.separatorChar;
-    private static final String pathIn = System.getProperty("user.dir") + fSep + "APP4" + fSep +"src" + fSep + "donnees" + fSep + "fichiers_json" + fSep;
+    private static final String pathIn = System.getProperty("user.dir") + fSep + "donnees" + fSep + "fichiers_json" + fSep;
 
     public CircuitApp(){
 
@@ -81,9 +73,24 @@ public class CircuitApp {
     }
 
     public static void main(String[] args) {
+        CircuitBuilder builder = new CircuitBuilder();
+        boolean continuer = true;
 
-    boolean continuer = true;
+        afficherDebutProgramme();
 
+        while(continuer) {
+            File fichier = selectionnerFichier();
 
+            if (fichier != null) {
+                Composant circuit = builder.construireCircuit(fichier.getName());
+
+                if (circuit != null) {
+                    double resultat = circuit.calculerResistance();
+                    afficherResultat(fichier.getName(), resultat);
+                }
+            }
+            continuer = demanderSiContinuer();
+        }
+        System.out.println("Programme arrêté");
     }
 }
