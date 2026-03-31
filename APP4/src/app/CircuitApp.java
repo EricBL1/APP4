@@ -59,6 +59,12 @@ public class CircuitApp {
         System.out.println("===============================================");
     }
 
+    private static void afficherDebutProgramme(){
+        System.out.println("===============================================");
+        System.out.println("Début de programme");
+        System.out.println("===============================================");
+    }
+
     private static boolean demanderSiContinuer(){
         while(true){
             System.out.print("\n[R] Tester un autre fichier | [Q] Quitter : ");
@@ -75,6 +81,9 @@ public class CircuitApp {
     }
 
     public static void main(String[] args) {
+
+    boolean continuer = true;
+
 
     }
 }
