@@ -52,6 +52,21 @@ public class CircuitApp {
         return null;
     }
 
+    private static boolean demanderSiContinuer(){
+        while(true){
+            System.out.print("\n[R] Tester un autre fichier | [Q] Quitter : ");
+            String continuer = scanner.nextLine().toUpperCase();
+
+            if(continuer.equals("R")){
+                return true;
+            }
+            else if (continuer.equals("Q")){
+                return false;
+            }
+            System.out.println("Option non reconnue. Utilisez 'R' ou 'Q'.");
+        }
+    }
+
     public static void main(String[] args) {
 
     }
