@@ -47,7 +47,7 @@ public class CircuitApp {
     private static void afficherResultat(String nomFichier, double resultat){
         System.out.println("===============================================");
         System.out.println(" Résultat pour : " + nomFichier);
-        System.out.println(" Résistance équivalente : " + resultat);
+        System.out.println(" Résistance équivalente : " + resultat + "Ω");
         System.out.println("===============================================");
     }
 
