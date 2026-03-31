@@ -1,6 +1,6 @@
 package app;
 import electronique.*;
-
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -10,12 +10,25 @@ import java.io.IOException;
 
 public class CircuitBuilder {
 
+    private static final char fSep = File.separatorChar;
+
+    private static final String pathIn = System.getProperty("user.dir") + fSep + "APP4" + fSep +"src" + "donnees" + fSep + "fichiers_json" + fSep;
+
     public CircuitBuilder(){
 
     }
 
-    public Composant construireCircuit(String composant){
+    public Composant construireCircuit(String fichierALire){
+        ObjectMapper mapper = new ObjectMapper();
+        String fichier = (pathIn + fichierALire);
+        try{
+            JsonNode donneesCircuit = mapper.readTree(new File(fichier));
 
+            lireComposant(donneesCircuit);
+
+        } catch (IOException e) {
+            System.err.println("Erreur de lecture : " + e.getMessage());
+        }
         return null;
     }
 
