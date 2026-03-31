@@ -52,6 +52,13 @@ public class CircuitApp {
         return null;
     }
 
+    private static void afficherResultat(String nomFichier, double resultat){
+        System.out.println("===============================================");
+        System.out.println(" Résultat pour : " + nomFichier);
+        System.out.println(" Résistance équivalente : " + resultat);
+        System.out.println("===============================================");
+    }
+
     private static boolean demanderSiContinuer(){
         while(true){
             System.out.print("\n[R] Tester un autre fichier | [Q] Quitter : ");
