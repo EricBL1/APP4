@@ -21,27 +21,25 @@ public class CircuitApp {
         if(fichiers == null || fichiers.length == 0){
             return null;
         }
+        while(true){
+            System.out.println("--- LISTE DES CIRCUITS ---");
+            for (int i = 0; i < fichiers.length; i++) {
+                System.out.println("[" + (i+1) + "] " + fichiers[i].getName());
 
-        System.out.println("--- LISTE DES CIRCUITS ---");
-        for (int i = 0; i < fichiers.length; i++) {
-            System.out.println("[" + (i+1) + "] " + fichiers[i].getName());
-
-        }
-
-        System.out.println("Entrez le numéro du fichier à tester :");
-        if(scanner.hasNextInt()){
-            int fichierALire = scanner.nextInt();
-            scanner.nextLine();
-
-            if(fichierALire >= 1 && fichierALire <= fichiers.length){
-                return fichiers[fichierALire - 1];
             }
-        } else{
-            scanner.nextLine();
-        }
-        System.out.println("Choix incorrect. Veuillez entrer un chiffre entre 1 et " + fichiers.length + ".");
+            System.out.println("Entrez le numéro du fichier à tester :");
+            if(scanner.hasNextInt()){
+                int fichierALire = scanner.nextInt();
+                scanner.nextLine();
 
-        return null;
+                if(fichierALire >= 1 && fichierALire <= fichiers.length){
+                    return fichiers[fichierALire - 1];
+                }
+            } else{
+                scanner.nextLine();
+            }
+            System.out.println("Choix incorrect. Veuillez entrer un chiffre entre 1 et " + fichiers.length + ".");
+        }
     }
 
     private static void afficherResultat(String nomFichier, double resultat){
