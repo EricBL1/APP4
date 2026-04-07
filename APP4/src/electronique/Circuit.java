@@ -9,9 +9,4 @@ public abstract class Circuit extends Composant {
         this.composants = listComposant;
     }
 
-    public List<Composant> getComposants(){
-        return this.composants;
-    }
-
-
 }
