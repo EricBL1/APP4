@@ -51,7 +51,7 @@ public class CircuitApp {
 
     private static void afficherDebutProgramme(){
         System.out.println("===============================================");
-        System.out.println("Début de programme");
+        System.out.println("Début du programme");
         System.out.println("===============================================");
     }
 
